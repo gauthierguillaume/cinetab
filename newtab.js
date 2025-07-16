@@ -1,6 +1,8 @@
-// Clés par défaut
-const DEFAULT_TMDB_API_KEY = "";
-const DEFAULT_OMDB_API_KEY = "";
+// Clés par défaut (fournies par le développeur)
+// Note: Ces clés sont partagées et ont des limites d'utilisation
+// Pour une utilisation intensive, créez vos propres clés API
+const DEFAULT_TMDB_API_KEY = "0a973ea824d8a0973f3187843af64e2b";
+const DEFAULT_OMDB_API_KEY = "cdb36cb4";
 
 // Variables pour les clés API
 let TMDB_API_KEY = DEFAULT_TMDB_API_KEY;

@@ -21,8 +21,9 @@ Transform your new tab into a cinematic experience with random movies and TV sho
 ### Prerequisites
 
 -   Google Chrome browser
--   TMDB API key (free)
--   OMDb API key (free)
+-   **API keys included by default!** For intensive use, consider getting your own:
+    -   TMDB API key (free)
+    -   OMDb API key (free)
 
 ### Setup Instructions
 
@@ -32,23 +33,25 @@ Transform your new tab into a cinematic experience with random movies and TV sho
     git clone https://github.com/gauthierguillaume/cinetab.git
     ```
 
-2. **Get your API keys**
-
-    - [TMDB API Key](https://www.themoviedb.org/settings/api) - Free registration required
-    - [OMDb API Key](http://www.omdbapi.com/apikey.aspx) - Free tier available
-
-3. **Install the extension**
+2. **Install the extension**
 
     - Open Chrome and go to `chrome://extensions/`
     - Enable "Developer mode" (top right)
     - Click "Load unpacked" and select the CineTab folder
     - The extension will appear in your toolbar
 
-4. **Configure your settings**
-    - Click the CineTab icon in your toolbar
-    - Enter your TMDB and OMDb API keys
-    - Select your preferred content categories
-    - Click "Save Settings"
+3. **Ready to use!**
+    - The extension works immediately with default API keys
+    - Optionally configure your own API keys by clicking the CineTab icon in your toolbar
+
+### Optional: Custom API Keys
+
+For intensive use or if you encounter rate limits, get your own API keys:
+
+-   [TMDB API Key](https://www.themoviedb.org/settings/api) - Free registration required
+-   [OMDb API Key](http://www.omdbapi.com/apikey.aspx) - Free tier available
+
+Then enter them in the extension settings.
 
 ## 🎨 Screenshots
 
@@ -62,6 +65,15 @@ _Add screenshots of your extension in action_
     -   Open Movie Database (OMDb)
 -   **Storage**: Chrome Extension Storage API
 -   **Permissions**: Storage, Host permissions for API calls
+
+### Default API Keys
+
+This extension includes default API keys for immediate use. These keys are shared among all users and may have usage limitations. For intensive use or if you encounter issues, please create your own API keys:
+
+-   **TMDB API**: Free registration at [themoviedb.org](https://www.themoviedb.org/settings/api)
+-   **OMDb API**: Free tier available at [omdbapi.com](http://www.omdbapi.com/apikey.aspx)
+
+The default keys are provided as a convenience and may be subject to rate limiting or temporary unavailability.
 
 ## 📁 Project Structure
 
@@ -96,7 +108,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🐛 Issues & Support
 
-If you encounter any issues or have suggestions, please [open an issue](https://github.com/yourusername/cinetab/issues) on GitHub.
+If you encounter any issues or have suggestions, please [open an issue](https://github.com/gauthierguillaume/cinetab/issues) on GitHub.
 
 ---
 
