@@ -76,125 +76,125 @@ function getEndpoints() {
 
 	// Films - Listes principales
 	if (listPreferences.moviePopular) {
-		endpoints.push(`https://api.themoviedb.org/3/movie/popular?api_key=${TMDB_API_KEY}&vote_count.gte=100&language=en-US&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/movie/popular?api_key=${TMDB_API_KEY}&vote_count.gte=10&language=en-US&page=1`);
 	}
 	if (listPreferences.movieTopRated) {
-		endpoints.push(`https://api.themoviedb.org/3/movie/top_rated?api_key=${TMDB_API_KEY}&vote_count.gte=100&language=en-US&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/movie/top_rated?api_key=${TMDB_API_KEY}&vote_count.gte=10&language=en-US&page=1`);
 	}
 	if (listPreferences.movieTrending) {
 		endpoints.push(`https://api.themoviedb.org/3/trending/movie/week?api_key=${TMDB_API_KEY}&language=en-US&page=1`);
 	}
 	if (listPreferences.movieUpcoming) {
-		endpoints.push(`https://api.themoviedb.org/3/movie/upcoming?api_key=${TMDB_API_KEY}&vote_count.gte=50&language=en-US&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/movie/upcoming?api_key=${TMDB_API_KEY}&vote_count.gte=10&language=en-US&page=1`);
 	}
 	if (listPreferences.movieNowPlaying) {
-		endpoints.push(`https://api.themoviedb.org/3/movie/now_playing?api_key=${TMDB_API_KEY}&vote_count.gte=50&language=en-US&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/movie/now_playing?api_key=${TMDB_API_KEY}&vote_count.gte=10&language=en-US&page=1`);
 	}
 
 	// Séries - Listes principales
 	if (listPreferences.tvPopular) {
-		endpoints.push(`https://api.themoviedb.org/3/tv/popular?api_key=${TMDB_API_KEY}&vote_count.gte=100&language=en-US&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/tv/popular?api_key=${TMDB_API_KEY}&vote_count.gte=10&language=en-US&page=1`);
 	}
 	if (listPreferences.tvTopRated) {
-		endpoints.push(`https://api.themoviedb.org/3/tv/top_rated?api_key=${TMDB_API_KEY}&vote_count.gte=100&language=en-US&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/tv/top_rated?api_key=${TMDB_API_KEY}&vote_count.gte=10&language=en-US&page=1`);
 	}
 	if (listPreferences.tvTrending) {
 		endpoints.push(`https://api.themoviedb.org/3/trending/tv/week?api_key=${TMDB_API_KEY}&language=en-US&page=1`);
 	}
 	if (listPreferences.tvAiringToday) {
-		endpoints.push(`https://api.themoviedb.org/3/tv/airing_today?api_key=${TMDB_API_KEY}&vote_count.gte=50&language=en-US&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/tv/airing_today?api_key=${TMDB_API_KEY}&vote_count.gte=10&language=en-US&page=1`);
 	}
 	if (listPreferences.tvOnAir) {
-		endpoints.push(`https://api.themoviedb.org/3/tv/on_the_air?api_key=${TMDB_API_KEY}&vote_count.gte=50&language=en-US&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/tv/on_the_air?api_key=${TMDB_API_KEY}&vote_count.gte=10&language=en-US&page=1`);
 	}
 
 	// Films - Par genre
 	if (listPreferences.movieAction) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=28&without_genres=10749&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=28&without_genres=10749&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.movieComedy) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=35&without_genres=10749&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=35&without_genres=10749&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.movieDrama) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=18&without_genres=10749&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=18&without_genres=10749&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.movieHorror) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=27&without_genres=10749&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=27&without_genres=10749&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.movieRomance) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=10749&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=10749&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.movieThriller) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=53&without_genres=10749&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=53&without_genres=10749&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.movieScifi) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=878&without_genres=10749&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=878&without_genres=10749&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.movieFantasy) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=14&without_genres=10749&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=14&without_genres=10749&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.movieAnimation) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=16&without_genres=10749&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=16&without_genres=10749&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.movieDocumentary) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=99&without_genres=10749&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=99&without_genres=10749&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 
 	// Séries - Par genre
 	if (listPreferences.tvAction) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_genres=10759&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_genres=10759&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.tvComedy) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_genres=35&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_genres=35&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.tvDrama) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_genres=18&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_genres=18&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.tvCrime) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_genres=80&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_genres=80&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.tvReality) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_genres=10764&vote_count.gte=50&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_genres=10764&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.tvAnimation) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_genres=16&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_genres=16&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.tvDocumentary) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_genres=99&vote_count.gte=50&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_genres=99&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 
 	// Films - Par région
 	if (listPreferences.movieUs) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_origin_country=US&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_origin_country=US&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.movieUk) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_origin_country=GB&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_origin_country=GB&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.movieFrench) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_origin_country=FR&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_origin_country=FR&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.movieKorean) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_origin_country=KR&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_origin_country=KR&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.movieJapanese) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_origin_country=JP&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_origin_country=JP&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 
 	// Séries - Par région
 	if (listPreferences.tvUs) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_origin_country=US&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_origin_country=US&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.tvUk) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_origin_country=GB&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_origin_country=GB&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.tvFrench) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_origin_country=FR&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_origin_country=FR&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.tvKorean) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_origin_country=KR&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_origin_country=KR&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 	if (listPreferences.tvJapanese) {
-		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_origin_country=JP&vote_count.gte=100&language=en-US&sort_by=popularity.desc&page=1`);
+		endpoints.push(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&with_origin_country=JP&vote_count.gte=10&language=en-US&sort_by=popularity.desc&page=1`);
 	}
 
 	return endpoints;
@@ -233,31 +233,28 @@ async function buildBigList() {
 		items.forEach((item) => (item._type = type));
 		allItems = allItems.concat(items);
 	}
-	
+
 	// Filtrer les contenus de mauvaise qualité
-	allItems = allItems.filter(item => {
-		// Filtrer par nombre de votes minimum (au moins 100 votes)
-		if (item.vote_count < 100) return false;
-		
+	allItems = allItems.filter((item) => {
+		// Filtrer par nombre de votes minimum (au moins 10 votes)
+		if (item.vote_count < 10) return false;
+
 		// Filtrer par popularité minimum
 		if (item.popularity < 5) return false;
-		
+
 		// Filtrer les genres adultes/érotiques (genre ID 10749 pour Romance est OK, mais on évite les films avec des mots-clés suspects)
 		const title = item.title || item.name || "";
 		const overview = item.overview || "";
-		const suspiciousKeywords = [
-			"erotic", "adult", "xxx", "porn", "sex", "sexual",
-			"érotique", "adulte", "sexuel", "sexuelle"
-		];
-		
+		const suspiciousKeywords = ["erotic", "adult", "xxx", "porn", "sex", "sexual", "sexy", "pink film", "softcore", "érotique", "adulte", "sexuel", "sexuelle"];
+
 		const textToCheck = (title + " " + overview).toLowerCase();
 		for (let keyword of suspiciousKeywords) {
 			if (textToCheck.includes(keyword)) return false;
 		}
-		
+
 		return true;
 	});
-	
+
 	// Supprime les doublons (id unique sur chaque type)
 	fullList = [];
 	const ids = new Set();
