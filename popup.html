@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CineTab Settings</title>
+		<style>
+			body {
+				width: 650px;
+				min-height: 400px;
+				padding: 20px;
+				font-family: Arial, sans-serif;
+				background: #1a1a1a;
+				color: #fff;
+				margin: 0;
+			}
+			.section {
+				background: #2a2a2a;
+				padding: 15px;
+				margin: 10px 0;
+				border-radius: 8px;
+				border: 1px solid #444;
+			}
+			.section h3 {
+				margin: 0 0 10px 0;
+				color: #f5c518;
+				font-size: 16px;
+			}
+			input[type="text"] {
+				width: 100%;
+				padding: 8px;
+				background: #333;
+				border: 1px solid #555;
+				color: #fff;
+				border-radius: 4px;
+				margin: 5px 0;
+				box-sizing: border-box;
+			}
+			button {
+				background: #f5c518;
+				color: #000;
+				border: none;
+				padding: 10px 20px;
+				border-radius: 5px;
+				cursor: pointer;
+				margin: 5px;
+				font-weight: bold;
+			}
+			button:hover {
+				background: #e6b800;
+			}
+			.success {
+				color: #4caf50;
+			}
+			.error {
+				color: #f44336;
+			}
+			.status {
+				margin: 10px 0;
+				padding: 8px;
+				border-radius: 4px;
+				text-align: center;
+				display: none;
+			}
+			.status.success {
+				background: rgba(76, 175, 80, 0.1);
+				border: 1px solid #4caf50;
+				color: #4caf50;
+				display: block;
+			}
+			.status.error {
+				background: rgba(244, 67, 54, 0.1);
+				border: 1px solid #f44336;
+				color: #f44336;
+				display: block;
+			}
+			.checkbox-group {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 8px;
+				margin: 10px 0;
+			}
+			.checkbox-item {
+				display: flex;
+				align-items: center;
+				padding: 4px;
+			}
+			.checkbox-item input[type="checkbox"] {
+				margin-right: 8px;
+			}
+			.checkbox-item label {
+				cursor: pointer;
+				font-size: 14px;
+			}
+			.collapsible {
+				background: #333;
+				color: #fff;
+				cursor: pointer;
+				padding: 12px;
+				width: 100%;
+				border: none;
+				text-align: left;
+				outline: none;
+				font-size: 15px;
+				border-radius: 4px;
+				margin: 5px 0;
+				transition: background 0.3s;
+			}
+			.collapsible:hover {
+				background: #444;
+			}
+			.collapsible.active {
+				background: #f5c518;
+				color: #000;
+			}
+			.content {
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 0.3s ease-out;
+				background: #2a2a2a;
+				margin-bottom: 10px;
+				border-radius: 4px;
+			}
+			.content.show {
+				max-height: 600px;
+				padding: 15px;
+			}
+			.content-columns {
+				display: flex;
+				gap: 20px;
+				margin: 20px 0;
+			}
+			.column-left,
+			.column-right {
+				flex: 1;
+				min-width: 0;
+			}
+			.column-left h3,
+			.column-right h3 {
+				margin: 0 0 15px 0;
+				padding: 10px 15px;
+				background: #333;
+				color: #f5c518;
+				border-radius: 6px;
+				text-align: center;
+				font-size: 16px;
+				font-weight: bold;
+			}
+			.column-left .collapsible,
+			.column-right .collapsible {
+				margin: 10px 0 0 0;
+				font-size: 14px;
+				padding: 10px 12px;
+			}
+			.column-left .content,
+			.column-right .content {
+				margin-bottom: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>🎬 CineTab Settings</h2>
+
+		<div class="section">
+			<h3>API Configuration</h3>
+			<div>
+				<label>TMDB API Key:</label>
+				<input type="text" id="tmdb-key" placeholder="Enter your TMDB API key..." />
+			</div>
+			<div>
+				<label>OMDb API Key:</label>
+				<input type="text" id="omdb-key" placeholder="Enter your OMDb API key..." />
+			</div>
+		</div>
+
+		<div class="content-columns">
+			<div class="column-left">
+				<h3>🎬 Movies</h3>
+
+				<button class="collapsible">� Popular Lists</button>
+				<div class="content">
+					<div class="checkbox-group">
+						<div class="checkbox-item">
+							<input type="checkbox" id="moviePopular" />
+							<label for="moviePopular">Popular</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieTopRated" />
+							<label for="movieTopRated">Top Rated</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieTrending" />
+							<label for="movieTrending">Trending</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieUpcoming" />
+							<label for="movieUpcoming">Upcoming</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieNowPlaying" />
+							<label for="movieNowPlaying">Now Playing</label>
+						</div>
+					</div>
+				</div>
+
+				<button class="collapsible">🎭 Genres</button>
+				<div class="content">
+					<div class="checkbox-group">
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieAction" />
+							<label for="movieAction">Action</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieComedy" />
+							<label for="movieComedy">Comedy</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieDrama" />
+							<label for="movieDrama">Drama</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieHorror" />
+							<label for="movieHorror">Horror</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieRomance" />
+							<label for="movieRomance">Romance</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieThriller" />
+							<label for="movieThriller">Thriller</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieScifi" />
+							<label for="movieScifi">Sci-Fi</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieFantasy" />
+							<label for="movieFantasy">Fantasy</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieAnimation" />
+							<label for="movieAnimation">Animation</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieDocumentary" />
+							<label for="movieDocumentary">Documentary</label>
+						</div>
+					</div>
+				</div>
+
+				<button class="collapsible">🌍 Regions</button>
+				<div class="content">
+					<div class="checkbox-group">
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieUs" />
+							<label for="movieUs">US</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieUk" />
+							<label for="movieUk">UK</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieFrench" />
+							<label for="movieFrench">French</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieKorean" />
+							<label for="movieKorean">Korean</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="movieJapanese" />
+							<label for="movieJapanese">Japanese</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="column-right">
+				<h3>📺 TV Shows</h3>
+
+				<button class="collapsible">� Popular Lists</button>
+				<div class="content">
+					<div class="checkbox-group">
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvPopular" />
+							<label for="tvPopular">Popular</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvTopRated" />
+							<label for="tvTopRated">Top Rated</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvTrending" />
+							<label for="tvTrending">Trending</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvAiringToday" />
+							<label for="tvAiringToday">Airing Today</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvOnAir" />
+							<label for="tvOnAir">On Air</label>
+						</div>
+					</div>
+				</div>
+
+				<button class="collapsible">🎭 Genres</button>
+				<div class="content">
+					<div class="checkbox-group">
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvAction" />
+							<label for="tvAction">Action</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvComedy" />
+							<label for="tvComedy">Comedy</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvDrama" />
+							<label for="tvDrama">Drama</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvCrime" />
+							<label for="tvCrime">Crime</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvReality" />
+							<label for="tvReality">Reality</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvAnimation" />
+							<label for="tvAnimation">Animation</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvDocumentary" />
+							<label for="tvDocumentary">Documentary</label>
+						</div>
+					</div>
+				</div>
+
+				<button class="collapsible">🌍 Regions</button>
+				<div class="content">
+					<div class="checkbox-group">
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvUs" />
+							<label for="tvUs">US</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvUk" />
+							<label for="tvUk">UK</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvFrench" />
+							<label for="tvFrench">French</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvKorean" />
+							<label for="tvKorean">Korean</label>
+						</div>
+						<div class="checkbox-item">
+							<input type="checkbox" id="tvJapanese" />
+							<label for="tvJapanese">Japanese</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<button id="save-btn">💾 Save Settings</button>
+			<button id="reset-btn">🔄 Reset to Default</button>
+		</div>
+
+		<div id="status" class="status"></div>
+
+		<script src="popup.js"></script>
+	</body>
+</html>

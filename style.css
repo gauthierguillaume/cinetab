@@ -1,0 +1,202 @@
+body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	overflow: hidden;
+	font-family: "Segoe UI", Arial, sans-serif;
+	background: #111;
+}
+
+/* Masquer les éléments pendant le chargement initial */
+#fanart-bg,
+#cover-link,
+#imdb-rating {
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+/* Afficher les éléments quand ils sont chargés */
+#fanart-bg.loaded,
+#cover-link.loaded,
+#imdb-rating.loaded {
+	opacity: 1;
+}
+
+#fanart-zone {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* Fanart toujours pleine surface, crop en bas si besoin */
+#fanart-bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	object-position: top;
+	z-index: 1;
+	user-select: none;
+	background: #000;
+}
+
+/* COVER en bas à gauche avec marge = 3vw (modifiable), 1/3 largeur, jamais >50vh */
+#cover-link {
+	position: absolute;
+	left: 3vw;
+	bottom: 3vw;
+	z-index: 15;
+	/* Pas de width/height ici : c'est l'image qui drive le sizing */
+	display: block;
+}
+#cover-link img {
+	display: block;
+	max-width: calc(33.33vw - 3vw);
+	max-height: calc(50vh - 3vw);
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	object-position: center;
+	filter: drop-shadow(0 0 32px rgba(0, 0, 0, 0.2)) drop-shadow(0 8px 32px #000d) drop-shadow(0 0 12px rgba(0, 0, 0, 0.667));
+	border-radius: 18px;
+	background: none;
+	border: none;
+	margin: 0;
+	transition: transform 0.18s cubic-bezier(0.23, 1.11, 0.63, 0.98), filter 0.2s;
+	pointer-events: auto;
+	cursor: pointer;
+}
+
+/* ----------- ULTRAWIDE ----------- */
+@media (min-width: 3440px) {
+	#cover-link {
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: auto;
+		height: 100vh;
+		min-width: 0;
+		max-width: 40vw;
+		max-height: 100vh;
+	}
+	#cover-link img {
+		border-radius: 0;
+		height: 100vh;
+		width: auto;
+		max-width: 40vw;
+		max-height: 100vh;
+	}
+	#fanart-bg {
+		position: absolute;
+		left: 40vw; /* Valeur par défaut, sera ajustée par JS */
+		top: 0;
+		width: 60vw; /* Valeur par défaut, sera ajustée par JS */
+		height: 100vh;
+		object-fit: cover;
+		object-position: center top; /* Crop par le bas, garde le haut */
+		z-index: 1;
+	}
+	#imdb-rating {
+		left: 25vw; /* positionné à environ 25% de la largeur d'écran, plus près de la cover */
+	}
+}
+
+#cover {
+	transition: transform 0.2s cubic-bezier(0.22, 1.15, 0.18, 1.01);
+	will-change: transform;
+	box-shadow: 0 6px 32px rgba(0, 0, 0, 0.35), 0 1.5px 12px rgba(0, 0, 0, 0.15);
+	border-radius: 20px;
+}
+
+#imdb-rating {
+	position: absolute;
+	left: calc(3vw + 32vw - 2px); /* très proche de la cover */
+	bottom: 3vw;
+	background: rgba(0, 0, 0, 0.85);
+	padding: 0;
+	border-radius: 8px;
+	z-index: 20;
+	min-width: 150px;
+	min-height: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0;
+	pointer-events: auto;
+	cursor: pointer;
+	text-decoration: none;
+	transition: background 0.2s, transform 0.2s;
+	font-family: "Segoe UI", Arial, sans-serif;
+	border: 2px solid rgba(245, 197, 24, 0.4);
+}
+
+#imdb-rating:hover {
+	background: rgba(10, 10, 10, 0.9);
+	transform: scale(1.05);
+	border-color: rgba(245, 197, 24, 0.6);
+}
+
+#imdb-rating::before {
+	content: "IMDb RATING";
+	font-size: 1.3em;
+	font-weight: bold;
+	color: #888;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	text-align: center;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 0.4em 0;
+	background: transparent;
+}
+
+.rating-container {
+	display: flex;
+	align-items: center;
+	gap: 0.2em;
+	flex: 1;
+	padding: 0.2em 0.8em;
+}
+
+.rating-star {
+	color: #f5c518;
+	font-size: 2.2em;
+}
+
+.rating-value {
+	font-size: 2.2em;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.rating-divider {
+	color: #888;
+	font-weight: normal;
+	margin: 0 0.05em;
+	font-size: 2em;
+}
+
+.rating-max {
+	color: #888;
+	font-weight: normal;
+	font-size: 2em;
+}
+
+.rating-votes {
+	color: #888;
+	font-size: 1.4em;
+	font-weight: normal;
+	text-align: center;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.2em 0.8em;
+}

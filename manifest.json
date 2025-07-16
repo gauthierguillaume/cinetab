@@ -1,0 +1,15 @@
+{
+	"manifest_version": 3,
+	"name": "CineTab",
+	"version": "1.0",
+	"description": "Transform your new tab into a cinematic experience with random movies and TV shows, featuring posters, fanarts, and IMDb ratings.",
+	"chrome_url_overrides": {
+		"newtab": "newtab.html"
+	},
+	"permissions": ["storage", "tabs"],
+	"host_permissions": ["https://api.themoviedb.org/*", "https://image.tmdb.org/*", "https://www.omdbapi.com/*"],
+	"action": {
+		"default_popup": "popup.html",
+		"default_title": "CineTab Settings"
+	}
+}
