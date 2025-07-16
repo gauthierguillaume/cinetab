@@ -91,11 +91,6 @@ function saveSettings() {
 	const tmdbKey = document.getElementById("tmdb-key").value.trim();
 	const omdbKey = document.getElementById("omdb-key").value.trim();
 
-	if (!tmdbKey || !omdbKey) {
-		showStatus("Please enter both API keys", "error");
-		return;
-	}
-
 	// Collect all checkbox preferences
 	const listPreferences = {};
 	Object.keys(DEFAULT_LIST_PREFERENCES).forEach(function (key) {

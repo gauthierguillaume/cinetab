@@ -68,11 +68,6 @@ function loadApiKeys() {
 	});
 }
 
-// Vérifier si les clés API sont configurées
-function checkApiKeys() {
-	return TMDB_API_KEY && OMDB_API_KEY && TMDB_API_KEY !== "" && OMDB_API_KEY !== "";
-}
-
 // Ouvrir les paramètres de l'extension
 function openExtensionSettings() {
 	// Afficher un message d'instructions stylé
@@ -139,99 +134,6 @@ function openExtensionSettings() {
 		if (e.target === overlay) {
 			overlay.remove();
 		}
-	});
-}
-
-// Afficher le message de configuration des clés
-function showApiKeyMessage() {
-	document.body.innerHTML = `
-		<div style="
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			min-height: 100vh;
-			background: #1a1a1a;
-			color: #ffffff;
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-			padding: 20px;
-		">
-			<div style="
-				background: #2a2a2a;
-				padding: 40px;
-				border-radius: 12px;
-				text-align: center;
-				max-width: 500px;
-				border: 2px solid #f5c518;
-			">
-				<h1 style="
-					color: #f5c518;
-					margin-bottom: 20px;
-					font-size: 28px;
-					font-weight: 600;
-				">⭐ CineTab Setup Required</h1>
-				
-				<p style="
-					margin-bottom: 30px;
-					color: #cccccc;
-					font-size: 16px;
-					line-height: 1.5;
-				">
-					To use CineTab, you need to configure your own API keys.<br>
-					This ensures the extension works reliably for everyone.
-				</p>
-				
-				<div style="
-					background: #1a1a1a;
-					padding: 20px;
-					border-radius: 8px;
-					margin-bottom: 30px;
-					text-align: left;
-				">
-					<h3 style="color: #f5c518; margin-bottom: 15px;">📋 Setup Steps:</h3>
-					<ol style="color: #cccccc; margin: 0; padding-left: 20px;">
-						<li style="margin-bottom: 8px;">Click the CineTab extension icon in your browser toolbar</li>
-						<li style="margin-bottom: 8px;">Get your free <strong>TMDB API key</strong> from <a href="https://www.themoviedb.org/settings/api" target="_blank" style="color: #f5c518;">themoviedb.org</a></li>
-						<li style="margin-bottom: 8px;">Get your free <strong>OMDb API key</strong> from <a href="http://www.omdbapi.com/apikey.aspx" target="_blank" style="color: #f5c518;">omdbapi.com</a></li>
-						<li>Enter both keys in the extension settings and save</li>
-					</ol>
-				</div>
-				
-				<button id="open-settings-btn" style="
-					background: #f5c518;
-					color: #000000;
-					border: none;
-					padding: 12px 24px;
-					font-size: 16px;
-					font-weight: 600;
-					border-radius: 6px;
-					cursor: pointer;
-					transition: background 0.3s;
-				">
-					🔧 Open Settings
-				</button>
-				
-				<p style="
-					margin-top: 20px;
-					color: #888;
-					font-size: 14px;
-				">
-					Both API keys are completely free and take less than 2 minutes to set up.
-				</p>
-			</div>
-		</div>
-	`;
-
-	// Ajouter les event listeners après avoir créé le HTML
-	const openSettingsBtn = document.getElementById("open-settings-btn");
-	openSettingsBtn.addEventListener("click", openExtensionSettings);
-
-	// Ajouter les effets hover via JavaScript
-	openSettingsBtn.addEventListener("mouseenter", function () {
-		this.style.background = "#e6b800";
-	});
-
-	openSettingsBtn.addEventListener("mouseleave", function () {
-		this.style.background = "#f5c518";
 	});
 }
 
@@ -672,13 +574,6 @@ document.getElementById("fanart-bg").addEventListener("click", function () {
 // (Re-)Tirer un nouveau film/série random au chargement initial seulement
 async function init() {
 	await loadApiKeys();
-
-	// Vérifier si les clés API sont configurées
-	if (!checkApiKeys()) {
-		showApiKeyMessage();
-		return;
-	}
-
 	pickRandomAndLoad();
 }
 
